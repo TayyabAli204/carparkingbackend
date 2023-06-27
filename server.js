@@ -15,7 +15,7 @@ const stripeRoutes = require('./src/routes/stripeRoutes')
 db.connection();
 
 const app = express();
-const port = 8000;
+const port = process.env.port || 8000;
 app.get("/data", storingData);
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -35,6 +35,6 @@ app.use("/payment-sheet",stripeRoutes)
 app.use("/",adminRoutes);
 
 
-app.listen(port, () => {
+app.listen(port, (req, res) => {
   console.log(`Example app listening on port ${port}`);
 });

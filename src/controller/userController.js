@@ -47,7 +47,7 @@ const doLogin = async (req, res) => {
     const userData = await usersCollection.findOne({
       email: req.body.email,
     });
-    console.log(req.body, userData);
+    console.log(req.body,'user data', userData);
     if (!userData.email) {
       return res.status(501).json({
         message: "email is not found",
@@ -77,6 +77,7 @@ const doLogin = async (req, res) => {
       data: {
         email: req.body.email,
         token: token,
+        name:userData.name
       },
     });
   } catch (error) {

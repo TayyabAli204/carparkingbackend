@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 async function connection() {
   try {
     const connection = await mongoose.connect(
-      "mongodb+srv://tayyab:xeccef@cluster0.59kwykj.mongodb.net/CarParking"
+      process.env.dbURI
     );
     console.log("connection successful");
   } catch (error) {
