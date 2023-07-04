@@ -11,7 +11,7 @@ const {
 routes.get('/location',getParkingLocation)
 routes.get('/:token',verifyUser,userHistory)
 routes.get('/bookedSlots',getBookedSlots)
-routes.get("/data/:id", parkingSlotData);
+routes.get("/data/:id/:id", parkingSlotData);
 routes.post("/book", verifyUser, bookParkingSlot);
 routes.get('/',getParkingSlots)
 module.exports = routes;

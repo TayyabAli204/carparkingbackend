@@ -6,7 +6,7 @@ const parkingSlotData = async (req, res) => {
   const data = await CarParking.find({ location: req.params.id });
   console.log("ahsdfj",data)
   res.json({
-    message: "request success",
+    message: "request successii",
     data,
   });
 };
