@@ -2,9 +2,7 @@ const { CarParking } = require("../models/parkingModel");
 const { connection } = require("../config/dbConfig");
 const { ObjectId } = require("mongodb");
 const parkingSlotData = async (req, res) => {
-  console.log("req.params.id",req.params.id);
   const data = await CarParking.find({ location: req.params.id });
-  console.log("ahsdfj",data)
   res.json({
     message: "request successii",
     data,
@@ -26,7 +24,6 @@ const bookParkingSlot = async (req, res) => {
     { $set: updateData },
     { new: true }
   );
-  // console.log("CarParking", updatedData);
 
   res.end("ok");
 };
@@ -39,7 +36,6 @@ const getBookedSlots = async (req, res) => {
   res.json(data);
 };
 const getParkingLocation = async (req, res) => {  
-console.log('inside')
   const data = await CarParking.find();
   const updatedData=[]
   data.forEach((item,index)=>{

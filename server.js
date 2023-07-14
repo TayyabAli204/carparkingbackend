@@ -24,7 +24,6 @@ app.use(express.static("public"));
 
 app.get("/body", (req, resp) => {
 console.log(req.query.Quiz.forEach(item=>console.log(item)))
-  console.log("request chali", req.body);
   resp.status(200).json(req.query);
 });
 

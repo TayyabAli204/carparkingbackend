@@ -3,7 +3,6 @@ const stripe = require('stripe')(process.env.Stripe_S_Key);
 
 const getStripePayment = async (req, res) => {
   
-    // Use an existing Customer ID if this is a returning customer.
     const {amount,currency} = req.body;
     const customer = await stripe.customers.create();
     const ephemeralKey = await stripe.ephemeralKeys.create(

@@ -25,9 +25,7 @@ const sendEmail = async (userEmail,token) => {
       text: token,
     });
     const results = await emails.save();
-    console.log("results", results);
   } catch (error) {
-    console.log("error", error);
   }
 };
 
